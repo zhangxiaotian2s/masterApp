@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view class="container">
+  <!--<view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>-->
+  <swiper class="index-swiper" indicator-dots="{{bannerCfg.indicatorDots}}"
+  autoplay="{{bannerCfg.autoplay}}" interval="{{bannerCfg.interval}}"  duration="{{bannerCfg.duration}}"     circular="{{bannerCfg.circular}}"
+>
+  <block wx:for="{{bannerCfg.imgUrls}}" wx:key="item">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"  width="750rpx" height="450"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="index-list">
+  <view wx:for="{{index_list}}" wx:key="item" data-location-path="{{item.path}}" class="index-list-box clearfix"  bindtap="bindNavigateTo" >
+     <image src="{{item.image}}" width="20"></image>
+     <text>{{item.text}}</text>
+  </view>
+
+  
+</view>
+
+
+</view>
