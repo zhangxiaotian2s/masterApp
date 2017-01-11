@@ -1,1 +1,33 @@
 /* pages/newmedia/news-index.wxss */
+
+.artical-item{
+    width: 750rpx;
+    height: 420rpx;
+    margin-bottom:20rpx;
+}
+.artical-item image{
+    width: 750rpx;
+    height: 420rpx;
+    z-index: 1
+}
+.artical-item .mes{
+    bottom: 20rpx;
+    z-index: 100;
+    color: #fff;
+    padding: 20rpx;
+    
+}
+.artical-item .mes .channel{
+    display: block;
+    background: #ff0000;
+    width: max-content;
+    font-size: 26rpx;
+    padding: 10rpx;
+    margin-bottom: 20rpx;
+} 
+.artical-item .mes .title{
+    display: block;
+    overflow: hidden;
+    font-size: 26rpx;
+    line-height: 36rpx;
+}

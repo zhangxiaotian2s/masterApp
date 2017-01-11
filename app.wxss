@@ -1,4 +1,48 @@
 /**app.wxss**/
+
+
+
+.pr {
+    position: relative;
+}
+
+.pa {
+    position: absolute;
+}
+
+.pf {
+    position: fixed;
+}
+.hidden {
+    display: none;
+}
+
+.clear {
+    clear: both;
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.img-circle {
+    border-radius: 50%
+}
+
+.text-left {
+    text-align: left
+}
+
+.text-right {
+    text-align: right
+}
+
+.text-center {
+    text-align: center
+}
 .container {
   height: 100%;
   display: flex;

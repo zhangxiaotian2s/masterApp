@@ -1,1 +1,10 @@
-{}
+{
+  "pages":[
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "大师头条",
+    "navigationBarTextStyle":"#fff"
+  }
+}

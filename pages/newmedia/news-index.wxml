@@ -1,5 +1,13 @@
 <view>
-sxssfsdfsd
-
-
+   <block wx:for="{{articals}}" wx:key="{{item}}">
+    <navigator url="url">
+      <view class="pr artical-item">
+      <image src="{{item.image}}"></image>
+       <view class="pa mes">
+         <text class="channel">{{item.channel.name}}</text>
+         <text class="title" >{{item.title}}</text>
+       </view>
+      </view>
+    </navigator>
+   </block>
 </view>

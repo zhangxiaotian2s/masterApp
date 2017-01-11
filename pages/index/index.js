@@ -12,6 +12,22 @@ Page({
     index_list:indexNav
   
   },
+  onReady: function () {
+    // wx.redirectTo({
+    //   url: '../newmedia/news-index',
+    //   success: function(res){
+    //     // success
+    //   },
+    //   fail: function() {
+    //     // fail
+    //   },
+    //   complete: function() {
+    //     // complete
+    //   }
+    // })
+
+    // 页面渲染完成
+  },
  
  bindNavigateTo:function(e){
   let url=e.currentTarget.dataset.locationPath
