@@ -1,5 +1,6 @@
 // pages/newmedia/news-index.js
-import { AppToash } from '../config.js';
+import { AppToash } from '../base.js';
+import { API } from 'config/config.js';
 import { NewsService } from 'service/newmedia.service.js';
 
 Page({
@@ -9,37 +10,25 @@ Page({
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
     let self = this;
-    //loading 
-      AppToash.loading();
-    //设置当前页面标题
-    wx.setNavigationBarTitle({
-      title: '大师头条',       
-    });
-    wx.request({
-      url: NewsService.api(),
-      data: {},
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      // header: {}, // 设置请求的 header
-      success: function(res){
-       if(res.data.code===10000){
-         self.setData({
-           articals:res.data.data
-         })
-       }
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    })
-    
+    //添加loading
+    AppToash.loading()
+    //获取新闻列表数据
+    self.getNewsList();
+
+
+  },
+  onShareAppMessage: function () {
+    return {
+      title: '自定义分享标题',
+      desc: '自定义分享描述',
+      path: '/page/user?id=123'
+    }
   },
   onReady: function () {
     // 页面渲染完成
-     var self = this;
+    var self = this;
      AppToash.close();
+
 
   },
   onShow: function () {
@@ -48,12 +37,24 @@ Page({
   onHide: function () {
     // 页面隐藏
   },
+  onPullDownRefresh: function(){
+    wx.stopPullDownRefresh()
+  },
   onUnload: function () {
     // 页面关闭
   },
-  getNewsList:function(){
-
+  getNewsList: function () {
+    //获取新闻列表数据
+    let self = this;
+    NewsService.getData(API.NEWSLIST, '', function (res) {
+      if (res.data.code === 10000) {
+        self.setData({
+          articals: res.data.data
+        })
+      }
+    })
   }
+
 
 
 })
