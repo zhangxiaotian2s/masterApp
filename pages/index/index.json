@@ -6,6 +6,7 @@
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "佰佳高尔夫",
-    "navigationBarTextStyle":"#fff"
+    "navigationBarTextStyle":"#fff",
+    "enablePullDownRefresh": false
   }
 }

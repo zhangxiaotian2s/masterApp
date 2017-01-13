@@ -5,9 +5,10 @@
     "pages/newmedia/news-index"
   ],
   "window":{
-    "backgroundTextStyle":"light",
+    "backgroundTextStyle":"dark",
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "佰佳高尔夫",
-    "navigationBarTextStyle":"#fff"
+    "navigationBarTextStyle":"#fff",
+    "enablePullDownRefresh":true
   }
 }

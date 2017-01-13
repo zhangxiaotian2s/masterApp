@@ -11,10 +11,11 @@ class appToash {
         this.confirmText = "确定";
         this.confirmColor = "#3CC51F";
     }
-    loading() {
+    loading(text) {
         let self = this;
+        let _text=text||self.text_loading
         wx.showToast({
-            title: self.text_loading,
+            title: _text,
             icon: 'loading',
             duration: self.time_duration
         })
@@ -71,5 +72,10 @@ class appToash {
         })
     }
 }
+class AppPage{
+      
+}
+
+
 const AppToash = new appToash();
-export { AppToash }
+export { AppToash,AppPage }

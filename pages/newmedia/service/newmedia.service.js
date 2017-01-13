@@ -6,9 +6,12 @@ class newsService {
     };
 
     getData(url, data, success, fail, complete) {
+        let _data={};
+        if(data.channel_uuid) _data.channel_uuid=data.channel_uuid;
+        if(data.last_request_uuid) _last_request_uuid.last_request_uuid=last_request_uuid;
         wx.request({
             url: this.ROOT_API + url,
-            data: data,
+            data: _data,
             method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
             // header: {}, // 设置请求的 header
             success: function (res) {

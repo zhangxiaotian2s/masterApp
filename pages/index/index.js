@@ -13,20 +13,10 @@ Page({
   
   },
   onReady: function () {
-    // wx.redirectTo({
-    //   url: '../newmedia/news-index',
-    //   success: function(res){
-    //     // success
-    //   },
-    //   fail: function() {
-    //     // fail
-    //   },
-    //   complete: function() {
-    //     // complete
-    //   }
-    // })
-
     // 页面渲染完成
+  },
+  onPullDownRefresh:function(){
+    wx.stopPullDownRefresh()
   },
  
  bindNavigateTo:function(e){
