@@ -9,9 +9,11 @@
   </block>
 </swiper>
 <view class="index-list">
-  <view wx:for="{{index_list}}" wx:key="item" data-location-path="{{item.path}}" class="index-list-box clearfix"  bindtap="bindNavigateTo" >
+  <view wx:for="{{index_list}}" wx:key="item"  class="index-list-box clearfix"   >
+    <navigator url="{{item.path}}">
      <image src="{{item.image}}" width="20"></image>
      <text>{{item.text}}</text>
+     </navigator>
   </view>
 
   

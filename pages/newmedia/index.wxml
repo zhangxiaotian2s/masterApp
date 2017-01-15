@@ -1,6 +1,6 @@
 <view class="container">
   <block wx:for="{{articals}}" wx:key="{{item}}">
-    <navigator url="url" wx:if="{{item.artice_type===1}}">
+    <navigator url="artical/index?uuid={{item.uuid}}" wx:if="{{item.artice_type===1}}">
       <view class="pr artical-item artical-item-type-1">
         <image src="{{item.image}}"></image>
         <view class="pa mes">
@@ -13,7 +13,7 @@
         </view>
       </view>
     </navigator>
-    <navigator url="url" wx:if="{{item.artice_type===2}}">
+    <navigator url="artical/index?uuid={{item.uuid}}" wx:if="{{item.artice_type===2}}">
       <view class="pr artical-item artical-item-type-2 clearfix">
         <view class="artical-img-box">
           <image src="{{item.image}}"></image>

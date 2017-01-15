@@ -13,7 +13,7 @@ class appToash {
     }
     loading(text) {
         let self = this;
-        let _text=text||self.text_loading
+        let _text = text || self.text_loading
         wx.showToast({
             title: _text,
             icon: 'loading',
@@ -59,12 +59,12 @@ class appToash {
             }
         })
     }
-    showActionSheet(itemList,success) {
+    showActionSheet(itemList, success) {
         wx.showActionSheet({
             itemList: itemList,
             success: function (res) {
                 console.log(res)
-                if(success) success(res);
+                if (success) success(res);
             },
             fail: function (res) {
                 console.log(res.errMsg)
@@ -72,10 +72,15 @@ class appToash {
         })
     }
 }
-class AppPage{
-      
+class AppPage {
+   static setTitle(title) {
+        wx.setNavigationBarTitle({
+            title: title
+        })
+    }
 }
 
 
-const AppToash = new appToash();
-export { AppToash,AppPage }
+let AppToash = new appToash();
+// let AppPage;
+export { AppToash, AppPage }

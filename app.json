@@ -2,7 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
-    "pages/newmedia/news-index"
+    "pages/newmedia/index",
+    "pages/newmedia/artical/index"
   ],
   "window":{
     "backgroundTextStyle":"dark",

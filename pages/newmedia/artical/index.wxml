@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="channel-name">
+    <text>{{news.channel.name}}</text>
+  </view>
+  <view  class="title">
+    <text> {{news.title}} </text>
+  </view>
+  <view class="time">
+     <text>17小时之前</text>
+  </view>
+  <view class="conetnt">
+    <block wx:for="{{news.content}}" wx:key="{{item}}">
+     <view class="content-item" wx:if="{{item.type==='text'}}">
+       <text>{{item.content}}</text>     
+     </view>
+     <view class="content-item" wx:if="{{item.type==='image'}}">
+       <image src="{{item.url}}" class="img-responsive"></image>
+     </view>
+      <view class="content-item" wx:if="{{item.type==='video'}}">
+       <video src="{{item.coverurl}}"></video>
+     </view>
+    </block>
+  </view>
+</view>

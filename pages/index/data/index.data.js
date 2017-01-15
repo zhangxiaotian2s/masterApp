@@ -2,7 +2,7 @@ const indexNav = [
     {
         image: 'img/index-list-1.jpg',
         text: '头条',
-        path: '../newmedia/news-index',
+        path: '../newmedia/index',
         status: ''
     },
     {
