@@ -1,30 +1,14 @@
 //app.js
+import { AppToash } from 'utils/base.js';
+import { Login } from 'service/service.js';
 App({
-  onLaunch: function () {
+  onLaunch() {
+    let self = this;
     //调用API从本地缓存中获取数据
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+    
+    //检测用户登陆状态  
+    Login.checkLogin();
+    
   },
-  getUserInfo:function(cb){
-    var that = this
-    if(this.globalData.userInfo){
-      typeof cb == "function" && cb(this.globalData.userInfo)
-    }else{
-      //调用登录接口
-      wx.login({
-        success: function () {
-          wx.getUserInfo({
-            success: function (res) {
-              that.globalData.userInfo = res.userInfo
-              typeof cb == "function" && cb(that.globalData.userInfo)
-            }
-          })
-        }
-      })
-    }
-  },
-  globalData:{
-    userInfo:null,
-  }
+ 
 })

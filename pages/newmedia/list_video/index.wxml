@@ -1,0 +1,3 @@
+<import src="../template/newslist/newslist.template.wxml"/>
+
+<template is="newslist" data="{{articals}}"/>

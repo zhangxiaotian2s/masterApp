@@ -28,6 +28,9 @@ swiper-item image {
   font-size: 30rpx;
   float: left;
 }
+.index-list-box .navigator-hover{
+  background: #ffffff!important;
+}
 
 .index-list-box:nth-of-type(3n) {
   border-right: none !important;

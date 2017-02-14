@@ -1,24 +1,33 @@
-<view class="container">
+<import src="../../../utils/wxParse/wxParse.wxml" />
+<view class="container artical-contaniner">
+  <view class='share_image'>
+    <image src="{{share_img}}"></image>
+  </view>
   <view class="channel-name">
     <text>{{news.channel.name}}</text>
   </view>
-  <view  class="title">
+  <view class="title">
     <text> {{news.title}} </text>
   </view>
   <view class="time">
-     <text>17小时之前</text>
+    <text>17小时之前</text>
   </view>
-  <view class="conetnt">
-    <block wx:for="{{news.content}}" wx:key="{{item}}">
-     <view class="content-item" wx:if="{{item.type==='text'}}">
-       <text>{{item.content}}</text>     
-     </view>
-     <view class="content-item" wx:if="{{item.type==='image'}}">
-       <image src="{{item.url}}" class="img-responsive"></image>
-     </view>
-      <view class="content-item" wx:if="{{item.type==='video'}}">
-       <video src="{{item.coverurl}}"></video>
-     </view>
-    </block>
+  <view class="wxParse artical-content">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+</view>
+<view class="fixed-bottom">
+  <view class="fixed-mes">
+    <view class="text">
+      <input type="text" bindblur="bindBlurFn" bindinput="bindInputFn" bindfocus="bindFocusFn" placeholder="随便聊几句" placeholder-class="placeholder-input" value="{{text_mesage}}" />
+    </view>
+    <view class="message-img" wx:if="{{!bool_show_btn}}" hover-class="message-hover">
+      <navigator url="../artical_comments/index?uuid={{article_uuid}}">
+        <image src="../../images/message.jpg"></image>
+      </navigator>
+    </view>
+    <view class="btn" wx:if="{{bool_show_btn}}">
+      <button type="primary" bindtap="addCommentFn">发送 </button>
+    </view>
   </view>
 </view>

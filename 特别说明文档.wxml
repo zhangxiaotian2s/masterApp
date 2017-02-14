@@ -1,0 +1,16 @@
+<view>
+  文件说明：
+   1.config.js 存放一些app 全局常亮 全大写命名 
+   暴露: PAGE_DATA 
+   2.utils :实用工具 
+      util.js 自带的或后追加的方法 比如 时间格式解析 
+      base.js:对微信的api 的封装， 
+      暴露：
+        AppToash：常用的弹出提示封装 
+        AppPage 目前只有一个设置标题的方法 
+        Storage 对本地存贮的封装
+      wxParse 富文本解析 第三方工具  https://github.com/icindy/wxParse
+   3.主目录service 放置一些全局的服务类
+      login 处理登陆的一些机制，
+     
+</view>

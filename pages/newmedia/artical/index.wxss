@@ -1,27 +1,115 @@
-.channel-name{
-    font-size: 26rpx;
-    color:#d81e06;
-    width: 94%;
-    margin-top: 20rpx;
-    margin-bottom: 20rpx;
+@import "../../../utils/wxParse/wxParse.wxss";
+
+.artical-contaniner {
+  padding-bottom: 120rpx;
 }
-.title{
-    font-size: 30rpx;
-    width: 94%;
-     margin-bottom: 10rpx;
+
+.channel-name {
+  font-size: 26rpx;
+  color: #d81e06;
+  width: 94%;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
 }
-.time{
-     width: 94%;
-    color:#8e8e8e;
-    font-size: 24rpx;
+
+.title {
+  font-size: 36rpx;
+  width: 94%;
+  margin-bottom: 10rpx;
 }
-.conetnt{ 
-    width: 100%;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
+
+.time {
+  width: 94%;
+  color: #8e8e8e;
+  font-size: 24rpx;
 }
-.content-item{
-     width: 94%; 
-     font-size: 30rpx;
+
+.conetnt {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.content-item {
+  width: 94%;
+  font-size: 30rpx;
+}
+
+.share_image {
+  height: 0px;
+  overflow: hidden;
+}
+
+.share_image image {
+  width: 750rpx;
+}
+
+.artical-content {
+  padding: 20rpx 0rpx;
+}
+
+.fixed-bottom {
+  position: fixed;
+  bottom: 0px;
+  width: 750rpx;
+  background: #fff;
+  border-top: #e0e0e0 solid 1rpx;
+}
+
+.fixed-mes {
+  display: flex;
+  flex-direction: row;
+  padding: 10rpx 0rpx;
+}
+
+.fixed-mes view {
+  height: 80rpx;
+  font-size: 30rpx;
+}
+
+.fixed-mes .text {
+  width: 600rpx;
+}
+
+.fixed-mes .btn {
+  width: 150rpx;
+}
+
+.fixed-mes input {
+  width: 560rpx;
+  height: 40rpx;
+  margin: 10rpx;
+  padding: 10rpx;
+  line-height: 40rpx;
+  min-height: 0rpx;
+  background: #f5f5f5;
+}
+
+.fixed-mes button {
+  width: 130rpx;
+  height: 60rpx;
+  margin: 10rpx;
+  padding: 0rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  border-radius: 0rpx;
+}
+
+.placeholder-input {
+  color: #b4b4b4;
+}
+
+.message-img{
+  width: 150rpx;
+}
+.message-img .navigator-hover{
+  background: #fcfcfc!important;
+}
+.message-img image {
+  display: block;
+  margin: 10rpx auto;
+  width: 60rpx;
+  height: 60rpx;
+}
+

@@ -1,0 +1,31 @@
+
+<!--pages/newmedia/artical_comments/index.wxml-->
+<view class="container comments-list-container">
+<block wx:for="{{data_comments}}" wx:key="{{item}}">
+  <view class="comments">
+    <view class="comments-box">
+      <view class="comment-image">
+        <image src="{{item.user.image}}"></image>
+      </view>
+      <view class="comment-mes">
+        <text class="comment-user-name">{{item.user.nickname}}</text>
+        <text class="comment-send-time">{{item.created_at}}</text>
+      </view>
+    </view>
+    <view class="comment-text">
+      <text>{{item.content}} </text>
+    </view>
+  </view>
+  </block>
+</view>
+
+<view class="fixed-bottom">
+  <view class="fixed-mes">
+    <view class="text">
+      <input type="text" bindblur="bindBlurFn" bindinput="bindInputFn" placeholder="随便聊几句" placeholder-class="placeholder-input" value="{{text_mesage}}" />
+    </view>
+    <view class="btn">
+      <button type="primary" disabled="{{bool_disabled}}" bindtap="addCommentFn">发送 </button>
+    </view>
+  </view>
+</view>

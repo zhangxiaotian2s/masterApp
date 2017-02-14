@@ -1,20 +1,30 @@
-import { AppToash, AppPage } from '../../base.js';
-import { API } from '../config/config.js';
-import { NewsService } from '../service/newmedia.service.js';
+import { AppToash, AppPage } from '../../../utils/base.js';
+import { PAGE_DATA } from '../../../config.js';
+import { ArtiaclService } from '../service/newmedia.service.js';
+import { Ajax } from '../../../service/service.js';
+import { Storage } from '../../../utils/base.js';
+var WxParse = require('../../../utils/wxParse/wxParse.js');
 
 Page({
   data: {
-    news: {}
+    news: {},
+    share_img: '',
+    bool_show_btn: false,
+    text_mesage: '',
+    article_uuid: ''
   },
   onLoad(options) {
     // 生命周期函数--监听页面加载
     console.log(options)
     let self = this;
-    if (options.uuid) self.data_news.uuid = options.uuid;
-    if (options.user_uuid) self.data_news.user_uuid = options.user_uuid;
+    if (options.uuid) {
+      self.setData({
+         article_uuid:options.uuid
+       });
+      self.data_share.path = 'pages/newmedia/artical/index?uuid=' + options.uuid;
+    }
+    AppPage.setTitle('佰佳高尔夫');
     self.getNewsContentFirst()
-
-
   },
   onReady() {
     // 生命周期函数--监听页面初次渲染完成
@@ -34,6 +44,8 @@ Page({
   },
   onPullDownRefresh() {
     // 页面相关事件处理函数--监听用户下拉动作
+    //终止刷新
+    wx.stopPullDownRefresh()
 
   },
   onReachBottom() {
@@ -41,27 +53,38 @@ Page({
 
   },
   onShareAppMessage() {
-    // 用户点击右上角分享
+    var self = this;
     return {
-      title: 'title', // 分享标题
-      desc: 'desc', // 分享描述
-      path: 'path' // 分享路径
+      title: self.data_share.title,
+      desc: self.data_share.desc,
+      path: self.data_share.path
     }
   },
-  data_news: {
-    uuid: '',
-    user_uuid: ''
+  data_mes: {
+    bool_show_btn: false
+  },
+  data_share: {
+    title: '',
+    desc: '',
+    path: ''
   },
   getNewsContentFirst() {
     let self = this;
     self.getNewsContent({
-      uuid: self.data_news.uuid,
-      user_uuid: self.data_news.user_uuid
+      uuid: self.data.article_uuid,
     }, function (res) {
       console.log(res.data.data)
+
       if (res.data.code === 10000) {
+        //整合HTMLstr
+        let _html = ArtiaclService.integrationHtml(res.data.data.content);
+
+        WxParse.wxParse('article', 'html', _html, self, 5);
+        self.data_share.title = res.data.data.share.title;
+        self.data_share.desc = res.data.data.share.summary;
         self.setData({
-          news: res.data.data
+          news: res.data.data,
+          share_img: res.data.data.share.image
         })
       }
     });
@@ -70,10 +93,55 @@ Page({
     let self = this;
     let _data = {}
     if (data && data.uuid) _data.uuid = data.uuid;
-    if (data && data.user_uuid) _data.user_uuid = data.user_uuid;
-    NewsService.getData(API.NEWSCONTENT, _data, function (res) {
-      if (callBackSuccess)
-        callBackSuccess(res)
+    ArtiaclService.getArticalContent(_data, callBackSuccess)
+  },
+  //留言的系列操作
+  bindFocusFn(e) {
+
+  },
+  bindInputFn(e) {
+    let self = this;
+    console.log(e)
+    if (e.detail.value !== "" && self.data.bool_show_btn === false) {
+      self.setData({
+        bool_show_btn: true
+      })
+    }
+  },
+  bindBlurFn(e) {
+    let self = this;
+    if (e.detail.value !== "") {
+      self.setData({
+        bool_show_btn: true,
+        text_mesage: e.detail.value
+      })
+    } else {
+      self.setData({
+        bool_show_btn: false
+      })
+    }
+  },
+  addCommentFn() {
+    let self = this;
+    AppToash.loading('提交中...')
+    ArtiaclService.addComment({
+      article_uuid: self.data.article_uuid,
+      user_uuid: Storage.Get('user_uuid'),
+      token: Storage.Get('token'),
+      content: self.data.text_mesage
+    }, function (res) {
+      //  AppToash.close()
+      console.log(res)
+      if (res.data.code === 10000) {
+        self.setData({
+          bool_show_btn: false,
+          text_mesage: ''
+        })
+        AppToash.success('提交成功')
+        setTimeout(function () {
+          AppToash.close()
+        }, 1000)
+      }
     })
   }
 })

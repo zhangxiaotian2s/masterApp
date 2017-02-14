@@ -1,32 +1,42 @@
-import { PAGE_DATA } from '../../config.js';
+import { PAGE_DATA } from '../../../config.js';
+import { Ajax } from '../../../service/service.js';
 
-class newsService {
+
+//文章详情页的服务
+class artiaclService {
+    //整合文章的富文本结构
     constructor() {
-        this.ROOT_API = PAGE_DATA.ROOT_API;
-    };
 
-    getData(url, data, success, fail, complete) {
-        
-        wx.request({
-            url: this.ROOT_API + url,
-            data: data,
-            method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-            // header: {}, // 设置请求的 header
-            success: function (res) {
-                success(res)
-            },
-            fail: function () {
-                if (fail) {
-                    fail()
-                }
-            },
-            complete: function () {
-                if (complete) {
-                    complete()
-                }
-            }
+    }
+    integrationHtml(data) {
+        let _html = '';
+        console.log(data)
+        data.pop();
+        data.pop();
+        data.forEach((item) => {
+            if (item.type == 'text') _html += item.content;
+            if (item.type === 'image') _html += `<div><img src="` + item.url + `" alt=""></div>`;
+            if (item.type === 'video') _html += `<video src="` + item.url + `"></video>`;
+        });
+        return _html;
+    }
+    getArticalContent(data, callBackSuccess) {
+        Ajax.getData(PAGE_DATA.API.NEWSCONTENT, data, function (res) {
+            if (callBackSuccess)
+                callBackSuccess(res)
+        })
+    }
+    addComment(data,callBackSuccess) {
+        Ajax.postData(PAGE_DATA.API.ADDCOMMENT, data, function (res) {
+            if (callBackSuccess) callBackSuccess(res);
+        })
+    }
+    getCommentsList(data,callBackSuccess){
+        Ajax.getData(PAGE_DATA.API.COMMENTS,data,function(res){
+             if (callBackSuccess) callBackSuccess(res);
         })
     }
 }
-var NewsService = new newsService();
-export { NewsService }
+let ArtiaclService = new artiaclService();
+// let NewsService = new newsService();
+export { ArtiaclService }
