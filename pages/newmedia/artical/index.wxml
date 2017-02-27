@@ -10,7 +10,7 @@
     <text> {{news.title}} </text>
   </view>
   <view class="time">
-    <text>17小时之前</text>
+    <text>{{news.published_at}}</text>
   </view>
   <view class="wxParse artical-content">
     <template is="wxParse" data="{{wxParseData:article.nodes}}" />

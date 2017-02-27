@@ -43,29 +43,6 @@ Page({
         bool_show_btn: false
       })
     }
-  },
-  addCommentFn() {
-    let self = this;
-    AppToash.loading('提交中...')
-    ArtiaclService.addComment({
-      article_uuid: self.data.artical_uuid,
-      user_uuid: Storage.Get('user_uuid'),
-      token: Storage.Get('token'),
-      content: self.data.text_mesage
-    }, function (res) {
-      //  AppToash.close()
-      console.log(res)
-      if (res.data.code === 10000) {
-        self.setData({
-          bool_show_btn: false,
-          text_mesage: ''
-        })
-        AppToash.success('提交成功')
-        setTimeout(function () {
-          AppToash.close()
-        }, 1000)
-      }
-    })
   }
 
 })

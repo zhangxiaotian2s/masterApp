@@ -1,8 +1,8 @@
-import { AppToash, AppPage } from '../../../utils/base.js';
+import { AppToash, AppPage, Storage } from '../../../utils/base.js';
+import { Time } from '../../../utils/util.js';
 import { PAGE_DATA } from '../../../config.js';
 import { ArtiaclService } from '../service/newmedia.service.js';
 import { Ajax } from '../../../service/service.js';
-import { Storage } from '../../../utils/base.js';
 var WxParse = require('../../../utils/wxParse/wxParse.js');
 
 Page({
@@ -19,8 +19,8 @@ Page({
     let self = this;
     if (options.uuid) {
       self.setData({
-         article_uuid:options.uuid
-       });
+        article_uuid: options.uuid
+      });
       self.data_share.path = 'pages/newmedia/artical/index?uuid=' + options.uuid;
     }
     AppPage.setTitle('佰佳高尔夫');
@@ -82,8 +82,13 @@ Page({
         WxParse.wxParse('article', 'html', _html, self, 5);
         self.data_share.title = res.data.data.share.title;
         self.data_share.desc = res.data.data.share.summary;
+
+        console.log(res.data.data)
+
+        let _data = res.data.data;
+        _data.published_at = Time.formatTime(_data.published_at);
         self.setData({
-          news: res.data.data,
+          news: _data,
           share_img: res.data.data.share.image
         })
       }

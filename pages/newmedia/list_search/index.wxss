@@ -1,0 +1,2 @@
+/* pages/newmedia/list_search/index.wxss */
+@import "../template/newslist/newslist.template.wxss"

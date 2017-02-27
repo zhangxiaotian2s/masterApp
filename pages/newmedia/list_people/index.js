@@ -17,8 +17,7 @@ Page({
   onLoad(options) {
     // 页面初始化 options为页面跳转所带来的参数
     let self = this;
-    //设置title
-    AppPage.setTitle('名人专栏');
+
     //添加loading
     AppToash.loading();
     //获取新闻列表数据

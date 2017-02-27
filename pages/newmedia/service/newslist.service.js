@@ -1,6 +1,6 @@
 import { PAGE_DATA } from '../../../config.js';
 import { AppToash, AppPage } from '../../../utils/base.js';
-import { Ajax} from '../../../service/service.js';
+import { Ajax } from '../../../service/service.js';
 
 class newsList {
     constructor() {
@@ -23,9 +23,8 @@ class newsList {
         self.getNewsList(_data, function (res) {
             if (res.data.code === 10000) {
                 res.data.data.forEach((index) => self.data_newslist.list_data.push(index));
-                if (callback) {
-                    callback(self.data_newslist.list_data)
-                }
+                if (callback) callback(self.data_newslist.list_data);
+
             }
         })
     }
@@ -38,9 +37,8 @@ class newsList {
         self.getNewsList(_data, function (res) {
             self.data_newslist.list_data = [];//先要清空已经存储的数据
             res.data.data.forEach((index) => self.data_newslist.list_data.push(index))
-            if (callback) {
-                callback(self.data_newslist.list_data)
-            }
+            if (callback) callback(self.data_newslist.list_data);
+
         })
 
     };
@@ -56,10 +54,16 @@ class newsList {
         console.log(_data)
         Ajax.getData(PAGE_DATA.API.NEWSLIST, _data, function (res) {
             self.data_newslist.required = true;
-            if (callBackSuccess) {
-                callBackSuccess(res)
-            }
+            if (callBackSuccess) callBackSuccess(res);
         })
+    }
+    //搜索内容
+    searchNewsList(data, callBackSuccess) {
+        let self = this;
+        Ajax.getData(PAGE_DATA.API.SEARCHNEWS, data, function (res) {
+            if (callBackSuccess) callBackSuccess(res);
+        })
+
     }
 
 }

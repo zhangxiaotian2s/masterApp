@@ -1,10 +1,13 @@
 {
   "pages": [
-    "pages/newmedia/list_all/index",
+    
     "pages/newmedia/list_new/index",
     "pages/newmedia/list_people/index",
     "pages/newmedia/list_technique/index",
-    "pages/newmedia/list_video/index",    
+    "pages/newmedia/list_video/index",
+    "pages/newmedia/list_all/index",
+    "pages/newmedia/list_chinal/index",
+    "pages/newmedia/list_search/index",      
     "pages/newmedia/artical/index",
     "pages/newmedia/artical_comments/index"
   ],
@@ -19,12 +22,7 @@
     "selectedColor": "#cc0000",
     "backgroundColor":"#f7f7fa",
     "list": [
-      {
-        "pagePath": "pages/newmedia/list_all/index",
-        "iconPath": "pages/images/icon-all.jpg",
-        "selectedIconPath": "pages/images/icon-all-selected.jpg",
-        "text": "全部"
-      },
+     
       {
         "pagePath": "pages/newmedia/list_new/index",
         "iconPath": "pages/images/icon-news.jpg",
@@ -48,7 +46,14 @@
         "iconPath": "pages/images/icon-video.jpg",
         "selectedIconPath": "pages/images/icon-video-selected.jpg",
         "text": "视频"
+      },
+       {
+        "pagePath": "pages/newmedia/list_chinal/index",
+        "iconPath": "pages/images/icon-all.jpg",
+        "selectedIconPath": "pages/images/icon-all-selected.jpg",
+        "text": "全部"
       }
+      
     ]
   }
 }

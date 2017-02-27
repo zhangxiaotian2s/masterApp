@@ -17,8 +17,6 @@ Page({
   onLoad(options) {
     // 页面初始化 options为页面跳转所带来的参数
     let self = this;
-    //设置title
-    AppPage.setTitle('资讯');
     //添加loading
     AppToash.loading();
     //获取新闻列表数据
@@ -75,7 +73,7 @@ Page({
     })
   },
   page_data: {
-    chinal_uuid: '85eb83b3-764f-48cf-a6f8-29d631db5696',
+    chinal_uuid: '',
     data_list: '',
     last_request_uuid: "",
     bool_list_is_end: false

@@ -1,0 +1,33 @@
+/* pages/newmedia/list_chinal/index.wxss */
+.serach{
+     width: 750rpx;
+     height: 100rpx;
+     padding: 50rpx 0rpx;
+     background:#e0e0e0;
+    
+}
+.serach-box{
+     width: 700rpx;
+     margin: auto;
+     height: 80rpx;
+     background: #ffffff;
+     display: flex;
+     flex-direction: row;
+}
+.seach-iocn{
+    width: 80rpx;
+    height: 80rpx;
+    text-align: center;
+    line-height: 80rpx;
+   
+}
+.seach-iocn icon{
+    display: block;
+    width: 30rpx;
+    height: 30rpx;
+    margin: 15rpx;
+}
+.serach-box input{
+    height: 80rpx; line-height: 80rpx;
+    font-size: 36rpx;
+}

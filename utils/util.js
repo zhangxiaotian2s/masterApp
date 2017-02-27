@@ -1,6 +1,6 @@
 class time {
   formatTime(time) {
-    let date=new Date(time)
+    let date=new Date(time*1000)
     let self = this;
     let year = date.getFullYear()
     let month = date.getMonth() + 1

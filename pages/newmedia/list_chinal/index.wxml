@@ -1,0 +1,14 @@
+
+<!--pages/newmedia/list_chinal/index.wxml-->
+<view class="container">
+  <view class="serach">
+    <view class="serach-box">
+      <view class="seach-iocn">
+      <icon type="search" />
+      </view>
+      <view>
+        <input type="text" placeholder="搜索文章" bindconfirm="bindconfirmFn" />
+      </view>
+    </view>
+  </view>
+</view>
