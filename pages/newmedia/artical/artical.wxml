@@ -22,7 +22,7 @@
       <input type="text" bindblur="bindBlurFn" bindinput="bindInputFn" bindfocus="bindFocusFn" placeholder="随便聊几句" placeholder-class="placeholder-input" value="{{text_mesage}}" />
     </view>
     <view class="message-img" wx:if="{{!bool_show_btn}}" hover-class="message-hover">
-      <navigator url="../artical_comments/index?uuid={{article_uuid}}">
+      <navigator url="../artical_comments/artical_comments?uuid={{article_uuid}}">
         <image src="../../images/message.jpg"></image>
       </navigator>
     </view>

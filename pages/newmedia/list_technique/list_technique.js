@@ -11,12 +11,13 @@ Page({
     return {
       title: '佰佳高尔夫新闻',
       desc: '佰佳高尔夫带给你最新最全的高尔夫新闻资讯',
-      path: '/pages/newmeadia/list_new/index'
+      path: '/pages/newmeadia/list_technique/list_technique'
     }
   },
   onLoad(options) {
     // 页面初始化 options为页面跳转所带来的参数
     let self = this;
+  
     //添加loading
     AppToash.loading();
     //获取新闻列表数据
@@ -73,7 +74,7 @@ Page({
     })
   },
   page_data: {
-    chinal_uuid: '',
+    chinal_uuid: '1ad87291-897a-4b11-9787-648cb1dfe9ff',
     data_list: '',
     last_request_uuid: "",
     bool_list_is_end: false

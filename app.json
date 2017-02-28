@@ -1,15 +1,15 @@
 {
   "pages": [
     
-    "pages/newmedia/list_new/index",
-    "pages/newmedia/list_people/index",
-    "pages/newmedia/list_technique/index",
-    "pages/newmedia/list_video/index",
-    "pages/newmedia/list_all/index",
-    "pages/newmedia/list_chinal/index",
-    "pages/newmedia/list_search/index",      
-    "pages/newmedia/artical/index",
-    "pages/newmedia/artical_comments/index"
+    "pages/newmedia/list_new/list_new",
+    "pages/newmedia/list_people/list_people",
+    "pages/newmedia/list_technique/list_technique",
+    "pages/newmedia/list_video/list_video",
+    "pages/newmedia/list_all/list_all",
+    "pages/newmedia/list_chinal/list_chinal",
+    "pages/newmedia/list_search/list_search",      
+    "pages/newmedia/artical/artical",
+    "pages/newmedia/artical_comments/artical_comments"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -24,31 +24,31 @@
     "list": [
      
       {
-        "pagePath": "pages/newmedia/list_new/index",
+        "pagePath": "pages/newmedia/list_new/list_new",
         "iconPath": "pages/images/icon-news.jpg",
         "selectedIconPath": "pages/images/icon-news-selected.jpg",
         "text": "资讯"
       },
       {
-        "pagePath": "pages/newmedia/list_people/index",
+        "pagePath": "pages/newmedia/list_people/list_people",
         "iconPath": "pages/images/icon-people.jpg",
         "selectedIconPath": "pages/images/icon-people-selected.jpg",
         "text": "名人"
       },
       {
-        "pagePath": "pages/newmedia/list_technique/index",
+        "pagePath": "pages/newmedia/list_technique/list_technique",
         "iconPath": "pages/images/icon-technique.jpg",
         "selectedIconPath": "pages/images/icon-technique-selected.jpg",
         "text": "技术"
       },
       {
-        "pagePath": "pages/newmedia/list_video/index",
+        "pagePath": "pages/newmedia/list_video/list_video",
         "iconPath": "pages/images/icon-video.jpg",
         "selectedIconPath": "pages/images/icon-video-selected.jpg",
         "text": "视频"
       },
        {
-        "pagePath": "pages/newmedia/list_chinal/index",
+        "pagePath": "pages/newmedia/list_chinal/list_chinal",
         "iconPath": "pages/images/icon-all.jpg",
         "selectedIconPath": "pages/images/icon-all-selected.jpg",
         "text": "全部"

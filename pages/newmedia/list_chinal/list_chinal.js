@@ -25,14 +25,14 @@ Page({
     else {
       // self.searchNewsConent(e.detail.value)
       wx.navigateTo({
-        url: '../list_search/index?keywords=' + e.detail.value
+        url: '../list_search/list_search?keywords=' + e.detail.value
       })
     }
   },
   bindTapNavigateTo(e) {
     console.log(e.target.dataset.chinalUuid)
     wx.navigateTo({
-      url: '../list_all/index?keywords=' + e.target.dataset.chinalUuid + '&title=' + e.target.dataset.chinalTitle
+      url: '../list_all/list_all?keywords=' + e.target.dataset.chinalUuid + '&title=' + e.target.dataset.chinalTitle
     })
   },
   //weui 处理搜索

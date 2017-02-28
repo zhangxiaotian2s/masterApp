@@ -11,7 +11,7 @@ Page({
     return {
       title: '佰佳高尔夫新闻',
       desc: '佰佳高尔夫带给你最新最全的高尔夫新闻资讯',
-      path: '/pages/newmeadia/list_people/index'
+      path: '/pages/newmeadia/list_people/list_people'
     }
   },
   onLoad(options) {
