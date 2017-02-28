@@ -31,3 +31,28 @@
     height: 80rpx; line-height: 80rpx;
     font-size: 36rpx;
 }
+
+.chinal-list{
+     width: 700rpx;
+     margin:20rpx auto;
+    display: flex;
+    flex-direction: row;
+     flex-wrap: wrap ;
+}
+.chinal-list view {
+      background: #f6f6f6;
+      border: #e0e0e0  solid 1px;
+       line-height: 30rpx;
+       font-size: 30rpx;
+       padding: 10rpx 17rpx;
+       margin: 10rpx 20rpx;
+       border-radius: 2px;
+
+}
+.chinal-list .current{
+     background: #e0e0e0
+}
+.weui-search-bar{
+     background: #e0e0e0;
+     border: none;
+}

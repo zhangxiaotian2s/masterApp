@@ -1,2 +1,7 @@
 <import src="../template/newslist/newslist.template.wxml"/>
 <template is="newslist" data="{{articals}}"/>
+<block wx:if="{{no_data}}">
+  <view class="no-data">
+    没有找到相关的文章~
+  </view>
+</block>

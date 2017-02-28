@@ -1,14 +1,51 @@
 
 <!--pages/newmedia/list_chinal/index.wxml-->
 <view class="container">
-  <view class="serach">
+
+  <!--<view class="serach">
     <view class="serach-box">
       <view class="seach-iocn">
-      <icon type="search" />
+        <icon type="search" />
       </view>
       <view>
         <input type="text" placeholder="搜索文章" bindconfirm="bindconfirmFn" />
       </view>
     </view>
+  </view>-->
+  <view class="page">
+    
+    <view class="page__bd serach">
+      <view class="weui-search-bar">
+        <view class="weui-search-bar__form">
+          <view class="weui-search-bar__box">
+            <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+            <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm="bindconfirmFn" />
+            <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+              <icon type="clear" size="14"></icon>
+            </view>
+          </view>
+          <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+            <icon class="weui-icon-search" type="search" size="14"></icon>
+            <view class="weui-search-bar__text">搜索</view>
+          </label>
+        </view>
+        <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+      </view>
+
+    </view>
+  </view>
+  <view class="chinal-list">
+    <view bindtap='bindTapNavigateTo' hover-class="current " data-chinal-uuid="63d8af9d-b458-4cdd-83ea-3f45965d1528" data-chinal-title="基础课">基础课</view>
+    <view bindtap='bindTapNavigateTo' hover-class="current" data-chinal-uuid="a2890b69-9005-42d3-9767-b27514d515c3 " data-chinal-title="特别策划">特别策划</view>
+    <view bindtap='bindTapNavigateTo' hover-class="current " data-chinal-uuid="050a3835-f750-424f-9ac4-067996ad4585 " data-chinal-title="教球台">教球台</view>
+    <view bindtap='bindTapNavigateTo' hover-class="current" data-chinal-uuid="146f23bc-ec8b-4c2a-b391-57435448b57c " data-chinal-title="文摘">文摘</view>
+    <view bindtap='bindTapNavigateTo' hover-class="current" data-chinal-uuid="62d6b148-d313-4243-9b33-9a09ffb64cc6 " data-chinal-title="大师日志">大师日志</view>
+    <view bindtap='bindTapNavigateTo' hover-class="current" data-chinal-uuid="05654a9e-a0bf-4d72-bae8-1d7d513cb6a5 " data-chinal-title="我爱大师赛">我爱大师赛</view>
+    <view bindtap='bindTapNavigateTo' hover-class="current" data-chinal-uuid="cd9e4ecc-e31d-4121-8f65-ef9bfcb9d58f " data-chinal-title="高尔夫生活">高尔夫生活</view>
+    <view bindtap='bindTapNavigateTo' hover-class="current" data-chinal-uuid="9602c0fe-1daa-4698-ba8d-adf21ca5f1df " data-chinal-title="高尔夫人">高尔夫人</view>
+    <view bindtap='bindTapNavigateTo' hover-class="current" data-chinal-uuid="27a79407-9277-456e-92f6-76f3fdcd3af7 " data-chinal-title="赛事">赛事</view>
+    <view bindtap='bindTapNavigateTo' hover-class="current" data-chinal-uuid="e958e354-cdf2-4322-b70f-5e0b63aed69c " data-chinal-title="球场">球场</view>
+    <view bindtap='bindTapNavigateTo' hover-class="current" data-chinal-uuid="b0c05d7a-59f0-47cb-85c0-a2aa510e54bb " data-chinal-title="球场旅游">球场旅游</view>
+    <view bindtap='bindTapNavigateTo' hover-class="current" data-chinal-uuid="e8720fcb-d0b8-4f5f-8f5e-f67a83175b55 " data-chinal-title="球具装备">球具装备</view>
   </view>
 </view>

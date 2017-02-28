@@ -11,6 +11,7 @@
 
 swiper-item image {
   width: 750rpx !important;
+
 }
 
 .index-list {

@@ -5,6 +5,7 @@ import { NewList } from '../service/newslist.service.js';
 Page({
   data: {
     articals: [],
+    no_data: false
   },
   onShareAppMessage() {
     return {
@@ -26,17 +27,22 @@ Page({
     NewList.searchNewsList(_data, function (res) {
       AppToash.close();
       console.log(res.data.data)
-       let _articals=res.data.data.slice(0, 20)
-       console.log(_articals)
+      let _articals = res.data.data.slice(0, 20)
+      console.log(_articals)
       self.setData({
         articals: _articals
       })
+      if (_articals.length === 0) {
+        self.setData({
+          no_data: true
+        })
+      }
     })
   },
   onReady() {
     // 页面渲染完成
     var self = this;
-  
+
   },
   onShow() {
     // 页面显示

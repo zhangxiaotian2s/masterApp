@@ -25,20 +25,37 @@ Page({
     else {
       // self.searchNewsConent(e.detail.value)
       wx.navigateTo({
-        url: '../list_search/index?keywords='+e.detail.value
+        url: '../list_search/index?keywords=' + e.detail.value
       })
     }
   },
-  searchNewsConent(text) {
-    let _data = {
-      keywords: text
-    }
-    NewList.searchNewsList(_data, function (res) {
-      if (res.data.code === 10000) {
-
-      }
-
+  bindTapNavigateTo(e) {
+    console.log(e.target.dataset.chinalUuid)
+    wx.navigateTo({
+      url: '../list_all/index?keywords=' + e.target.dataset.chinalUuid + '&title=' + e.target.dataset.chinalTitle
     })
-
+  },
+  //weui 处理搜索
+  showInput: function () {
+    this.setData({
+      inputShowed: true
+    });
+  },
+  hideInput: function () {
+    this.setData({
+      inputVal: "",
+      inputShowed: false
+    });
+  },
+  clearInput: function () {
+    this.setData({
+      inputVal: ""
+    });
+  },
+  inputTyping: function (e) {
+    this.setData({
+      inputVal: e.detail.value
+    });
   }
+
 })

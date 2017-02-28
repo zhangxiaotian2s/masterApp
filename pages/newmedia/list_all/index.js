@@ -17,8 +17,9 @@ Page({
   onLoad(options) {
     // 页面初始化 options为页面跳转所带来的参数
     let self = this;
+    self.page_data.chinal_uuid=options.keywords;
     //设置title
-    AppPage.setTitle('大师高尔夫');
+    AppPage.setTitle(options.title);
     //添加loading
     AppToash.loading();
     //获取新闻列表数据

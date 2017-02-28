@@ -15,8 +15,6 @@
      <text>{{item.text}}</text>
      </navigator>
   </view>
-
-  
 </view>
 
 
